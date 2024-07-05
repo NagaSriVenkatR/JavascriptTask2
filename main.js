@@ -10,7 +10,7 @@ function myfunction(event) {
   emailerr.innerHTML = "";
   paserr.innerHTML = "";
 
-  let emailPattern = /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-zA-Z]{2,20})$/;
+  let emailPattern = /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-zA-Z]+).([a-zA-Z]{2,20})$/;
   let upperCasePattern = /[A-Z]/;
   let lowerCasePattern = /[a-z]/;
   let numberPattern = /[0-9]/;
@@ -71,53 +71,56 @@ function myfunction(event) {
 
   document.getElementById("myform").reset();
 }
-function fetchData() {
+function fetchData(){
   fetch("https://6683c44d56e7503d1ade07d4.mockapi.io/userData/userData")
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Failed to fetch data");
-        
-      }
-    })
-    .then((users) => {
-      data = users;
-      updateTable();
-    })
-    .catch((error) => console.error(error));
+  .then((response)=>{
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("Failed to fetch the data");
+    }
+  })
+  .then((users) => {
+    data = users;
+    updateTable();
+  }).catch((error) => {
+    console.error(error);
+  });
 }
 
 function createUser(user) {
-  fetch("https://6683c44d56e7503d1ade07d4.mockapi.io/userData/userData", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(user),
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Failed to create user");
-      }
-    })
-    .then((newUser) => {
-      data.push(newUser);
-      updateTable();
-    })
-    .catch((error) => console.error(error));
-}
-
-function updateUser(index, user) {
   fetch(`https://6683c44d56e7503d1ade07d4.mockapi.io/userData/userData`, {
-    method: "PUT",
+    method : "POST",
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type":"application/json",
     },
-    body: JSON.stringify(user),
+    body:JSON.stringify(user),
   })
+  .then((response)=>{
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("Failed to create user");
+    }
+  })
+  .then((newUser)=>{
+    data.push(newUser);
+    updateTable();
+  })
+  .catch((error)=>console.error(error)); 
+}
+function updateUser(index, user) {
+  const userData = index + 1;
+  fetch(
+    `https://6683c44d56e7503d1ade07d4.mockapi.io/userData/userData/${userData}`,
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    }
+  )
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -131,22 +134,27 @@ function updateUser(index, user) {
     })
     .catch((error) => console.error(error));
 }
-
-function deleteRow(index) {
-  fetch(`https://6683c44d56e7503d1ade07d4.mockapi.io/userData/userData`, {
-    method: "DELETE",
-  })
+function deleteUser(index) {
+  const userData = index+1;
+  console.log(userData);
+  fetch(
+    `https://6683c44d56e7503d1ade07d4.mockapi.io/userData/userData/${userData}`,
+    {
+      method: "DELETE",
+      
+    }
+  )
     .then((response) => {
       if (response.ok) {
         data.splice(index, 1);
         updateTable();
+        return response.json();
       } else {
         throw new Error("Failed to delete user");
       }
     })
     .catch((error) => console.error(error));
 }
-
 function updateTable() {
   let dataTable = document
     .getElementById("dataTable")
@@ -170,6 +178,11 @@ function updateRow(index) {
   useremail.value = data[index].email;
   userpassword.value = data[index].password;
   editIndex = index;
+}
+function deleteRow(index) {
+  data.splice(index , 1);
+  deleteUser(index);
+  updateTable();
 }
 
 document.addEventListener("DOMContentLoaded", fetchData);

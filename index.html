@@ -18,8 +18,8 @@
     ></script>
   </head>
   <body>
-    <div class="form-section">
-      <div class="left">
+    <div class="form-section container m-5 justify-content-center align-items-center">
+      <div class="left container text-white bg-white ">
         <img src="background-image.png" alt="Background Image" />
         <h1>Xero Bank Loans</h1>
         <p>
@@ -27,24 +27,24 @@
           to fulfill your dreams.
         </p>
       </div>
-      <div class="right">
+      <div class="right container bg-white">
         <form id="myform" onsubmit="myfunction(event)">
           <h2>Let's start</h2>
           <p>
             Carefully read and fill up all the inputs with your original
             information.
           </p>
-          <div class="mb-3 mb-m-3">
+          <div class="mb-3 mb-m-3 container">
             <label class="form-label" for="email">Email ID:</label>
             <input class="form-control" id="email" type="email" />
             <span class="text-danger" id="emailerror"></span>
           </div>
-          <div class="mb-3">
+          <div class="mb-3 container">
             <label class="form-label" for="password">Password:</label>
             <input class="form-control" id="password" type="password" />
             <span class="text-danger" id="passworderror"></span>
           </div>
-          <div class="sub text-end">
+          <div class="sub text-end container">
             <input class="btn btn-success" type="submit" value="Submit" />
           </div>
         </form>
