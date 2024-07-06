@@ -17,34 +17,34 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
-    <div class="form-section container m-5 justify-content-center align-items-center">
-      <div class="left container text-white bg-white ">
+  <body class="m-5">
+    <div class="form-section container m-5 mx-md-5 justify-content-center align-items-center row">
+      <div class="left container text-white col-lg-6 col-md">
         <img src="background-image.png" alt="Background Image" />
-        <h1>Xero Bank Loans</h1>
-        <p>
+        <h1 class="text-center dispaly-1">Xero Bank Loans</h1>
+        <p class="text-center">
           We are the most trusted bank to give loans for home, cars, and others
           to fulfill your dreams.
         </p>
       </div>
-      <div class="right container bg-white">
+      <div class="right container bg-white col-lg-6 col-md px-5">
         <form id="myform" onsubmit="myfunction(event)">
-          <h2>Let's start</h2>
-          <p>
+          <h2 class="text-left dispaly-1 mx-2">Let's start</h2>
+          <p class="text-left mx-2">
             Carefully read and fill up all the inputs with your original
             information.
           </p>
-          <div class="mb-3 mb-m-3 container">
+          <div class="mb-3 mb-m-3 container col">
             <label class="form-label" for="email">Email ID:</label>
             <input class="form-control" id="email" type="email" />
             <span class="text-danger" id="emailerror"></span>
           </div>
-          <div class="mb-3 container">
+          <div class="mb-3 container col">
             <label class="form-label" for="password">Password:</label>
             <input class="form-control" id="password" type="password" />
             <span class="text-danger" id="passworderror"></span>
           </div>
-          <div class="sub text-end container">
+          <div class="sub text-end container col">
             <input class="btn btn-success" type="submit" value="Submit" />
           </div>
         </form>

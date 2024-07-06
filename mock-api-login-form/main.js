@@ -135,13 +135,13 @@ function updateUser(index, user) {
     .catch((error) => console.error(error));
 }
 function deleteUser(index) {
-  const userData = index+1;
+  console.log(index);
+  const userData = index;
   console.log(userData);
   fetch(
     `https://6683c44d56e7503d1ade07d4.mockapi.io/userData/userData/${userData}`,
     {
       method: "DELETE",
-      
     }
   )
     .then((response) => {
@@ -170,7 +170,7 @@ function updateTable() {
     cell2.innerHTML = data[i].email;
     cell3.innerHTML = data[i].password;
     cell4.innerHTML = `<button onclick="updateRow(${i})" style="padding:5px 15px;background-color:purple;color:white;font-size:20px;border-radius:5px">Update</button>
-                       <button onclick="deleteRow(${i})" style="padding:5px 15px;background-color:Red;color:white;font-size:20px;border-radius:5px">Delete</button>`;
+                       <button onclick="deleteRow(${data[i].id})" style="padding:5px 15px;background-color:Red;color:white;font-size:20px;border-radius:5px">Delete</button>`;
   }
 }
 
