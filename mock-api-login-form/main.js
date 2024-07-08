@@ -153,6 +153,17 @@ function deleteUser(index) {
         throw new Error("Failed to delete user");
       }
     })
+    .then(() => {
+      return fetch(
+        "https://6683c44d56e7503d1ade07d4.mockapi.io/userData/userData"
+      )
+        .then((response) => response.json())
+        .then((updatedData) => {
+          console.log("Updated user data:", updatedData);
+          data = updatedData;
+          updateTable();
+        });
+    })
     .catch((error) => console.error(error));
 }
 function updateTable() {

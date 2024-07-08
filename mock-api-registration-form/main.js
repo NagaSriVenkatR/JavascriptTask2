@@ -1,20 +1,19 @@
 let data = [];
 let editIndex = -1;
 let username = document.getElementById("name");
-let userlastname = document.getElementById("lastname");
 let useremail = document.getElementById("email");
 let userphonenumber = document.getElementById("phonenumber");
-let userdateofbirth = document.getElementById("dateofbirth");
-let usermale = document.getElementById("male");
-let userfemale = document.getElementById("female");
+let userdob = document.getElementById("dateofbirth");
 let usercity = document.getElementById("city");
 let userpassword = document.getElementById("password");
 let userconfirmpassword = document.getElementById("confirmpassword");
 let nameerr = document.getElementById("nameerror");
-let lastnameerr = document.getElementById("lastnameerror");
+let languageserr = document.getElementById("languageserror");
+let gendererr = document.getElementById("gendererror");
 let emailerr = document.getElementById("emailerror");
 let phonenumbererr = document.getElementById("phonenumbererror");
-let dateofbirtherr = document.getElementById("dateofbirtherror");
+let doberr = document.getElementById("dateofbirtherror");
+let cityerr = document.getElementById("cityerror");
 let passerr = document.getElementById("passworderror");
 let confirmpasserr = document.getElementById("confirmpassworderror");
 
@@ -23,8 +22,15 @@ function myfunction(event) {
   nameerr.innerHTML = "";
   emailerr.innerHTML = "";
   passerr.innerHTML = "";
+  doberr.innerHTML = "";
+  phonenumbererr.innerHTML = "";
+  gendererr.innerHTML = "";
+  languageserr.innerHTML = "";
+  cityerr.innerHTML = "";
+  let namePattern = /^([a-zA-Z]{3,})$/
   let emailPattern =
     /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-zA-Z]+).([a-zA-Z]{2,20})$/;
+  let phonenumberpattern = /^([0-9]{10})$/;
   let upperCasePattern = /[A-Z]/;
   let lowerCasePattern = /[a-z]/;
   let numberPattern = /[0-9]/;
@@ -33,10 +39,17 @@ function myfunction(event) {
   let name = username.value;
   let email = useremail.value;
   let password = userpassword.value;
+  let phonenumber = userphonenumber.value;
+  let dob = userdob.value;
+  let confirmpassword = userconfirmpassword.value;
+  let usergender = document.querySelector('input[name="gender"]:checked');
+  let userlanguages = document.querySelectorAll(
+    'input[type="checkbox"]:checked').value;
+  let city = usercity.value;
   if (name === "") {
     nameerr.innerHTML = "name is required";
-  } else {
-    nameerr.innerHTML = "Invalid email format";
+  } else if (!namePattern.test(name)) {
+    nameerr.innerHTML = "Name should be atleast three characters";
     return;
   }
   if (email === "") {
@@ -45,7 +58,28 @@ function myfunction(event) {
     emailerr.innerHTML = "Invalid email format";
     return;
   }
-
+  if(dob === ""){
+    doberr.innerHTML = "Date Of Birth is required";
+  }
+  if(phonenumber === ""){
+    phonenumbererr.innerHTML = "Phone Number is required";
+  }else if (!phonenumberpattern.test(phonenumber)){
+    phonenumbererr.innerHTML = "Invalid phone number format";
+  }
+  if(!usergender){
+    gendererr.innerHTML = "gender is required";
+  }
+  if(city === "")
+    cityerr.innerHTML = "city is required";
+  if(!userlanguages){
+    languageserr.innerHTML = "languages are required";
+  }
+  if (confirmpassword === "") {
+    confirmpasserr.innerHTML = "confirm password is required";
+  } else if (confirmpassword !== password) {
+    confirmpasserr.innerHTML =
+      "check your confirm password and password should be same";
+  }
   if (password === "") {
     passerr.innerHTML = "Password is required";
     return;
@@ -82,9 +116,27 @@ function myfunction(event) {
   }
 
   if (editIndex === -1) {
-    createUser({ email, password });
+    createUser({
+      email,
+      password,
+      name,
+      phonenumber,
+      dateofbirth,
+      gender,
+      language,
+      city
+    });
   } else {
-    updateUser(editIndex, { email, password });
+    updateUser(editIndex, {
+      email,
+      password,
+      name,
+      phonenumber,
+      dateofbirth,
+      gender,
+      language,
+      city
+    });
     editIndex = -1;
   }
 
@@ -194,11 +246,11 @@ function updateTable() {
     let cell11 = newRow.insertCell(10);
     cell1.innerHTML = i + 1;
     cell2.innerHTML = data[i].name;
-    cell3.innerHTML = data[i].lastname;
-    cell4.innerHTML = data[i].email;
-    cell5.innerHTML = data[i].phonenumber;
-    cell6.innerHTML = data[i].dateofbirth;
-    cell7.innerHTML = data[i].gender;
+    cell3.innerHTML = data[i].email;
+    cell4.innerHTML = data[i].phonenumber;
+    cell5.innerHTML = data[i].dateofbirth;
+    cell6.innerHTML = data[i].gender;
+    cell7.innerHTML = data[i].language;
     cell8.innerHTML = data[i].city;
     cell9.innerHTML = data[i].password;
     cell10.innerHTML = data[i].password;
@@ -209,7 +261,7 @@ function updateTable() {
 
 function updateRow(index) {
   username.value = data[index].name;
-  userlastname.value = data[index].lastname;
+  userdateofbirth.value = data[index].dateofbirth;
   useremail.value = data[index].email;
   userphonenumber.value = data[index].phonenumber;
   userpassword.value = data[index].password;
