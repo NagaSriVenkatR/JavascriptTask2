@@ -1,3 +1,14 @@
+.parent{
+  background-image: url(form-v9.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  justify-content:center;
+  align-items: center;
+}
+input{
+  border-radius: 50px;
+}
 span{
   color: red;
 }

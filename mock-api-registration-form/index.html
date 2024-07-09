@@ -18,31 +18,33 @@
     ></script>
   </head>
   <body>
-    <div class="container">
-      <h1>Registration Form</h1>
-      <form action="" id="myform" onsubmit="myfunction(event)">
-        <div class="container">
-          <label class="form-label" for="name">Name</label>
+    <div class="parent container d-flex my-5 p-5">
+      <form class="align-items-end " action="" id="myform" onsubmit="myfunction(event)">
+        <h1 class="mx-4 text-white">Registration Form</h1>
+        <div class="container d-flex my-4">
+          <div class="container col form-floating">
           <input
             class="form-control"
             id="name"
             type="text"
             placeholder="enter your full name"
           />
-          <span id="nameerror"></span>
+          <label class="floating-input mx-2" for="name">Name</label>
+          <span class="text-red" id="nameerror"></span>
+          </div>
+          <div class="container col form-floating">
+            <input
+              class="form-control"
+              id="email"
+              type="email"
+              placeholder="enter your email"
+            />
+            <label class="floating-input mx-2" for="email">Email</label>
+            <span class="text-red" id="emailerror"></span>
+          </div> 
         </div>
-        <div class="container">
-          <label class="form-label" for="email">Email</label>
-          <input
-            class="form-control"
-            id="email"
-            type="email"
-            placeholder="enter your email"
-          />
-          <span id="emailerror"></span>
-        </div>
-        <div class="container">
-          <label class="form-label" for="mobilenumber">Phonenumber</label>
+        <div class="container d-flex justify-content-spacebetween my-4">
+          <div class="container col form-floating">
           <input
             class="form-control"
             type="tel"
@@ -50,109 +52,141 @@
             id="phonenumber"
             placeholder="enter your phone number"
           />
-          <span id="phonenumbererror"></span>
+          <label class="floating-input mx-2" for="mobilenumber">Phonenumber</label>
+          <span class="text-red" id="phonenumbererror"></span>
         </div>
-        <div class="container">
-          <label class="form-label" for="dateofbirth">Date Of Birth</label>
+        <div class="container col form-floating">
           <input
             id="dateofbirth"
             class="form-control"
             type="date"
             placeholder="enter your date of birth"
           />
-          <span id="dateofbirtherror"></span>
+          <label class="floating-input mx-2" for="dateofbirth">Date Of Birth</label>
+          <span class="text-red" id="dateofbirtherror"></span>
         </div>
-        <div class="container" id="gender" name="gender">
+        </div>
+        <div class="container col my-4 text-white" id="gender" name="gender">
           Gender
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="gender"
-              id="gendermale"
-            />
-            <label class="form-check-label" for="flexRadioDefault1">
-              Male
-            </label>
+          <div class="container d-flex">
+            <div class="form-check me-3">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="gender"
+                id="gendermale"
+                value="Male"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Male
+              </label>
+            </div>
+            <div class="form-check me-3">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="gender"
+                id="genderfemale"
+                value="Female"
+              />
+              <label class="form-check-label" for="flexRadioDefault2">
+                Female
+              </label>
+            </div>
+            <div class="form-check me-3">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="gender"
+                id="genderothers"
+                value="Others"
+              />
+              <label class="form-check-label" for="flexRadioDefault2">
+                Others
+              </label>
+            </div>
           </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="gender"
-              id="genderfemale"
-            />
-            <label class="form-check-label" for="flexRadioDefault2">
-              Female
-            </label>
-          </div>
-           <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="gender"
-              id="genderothers"
-            />
-            <label class="form-check-label" for="flexRadioDefault2">
-              Others
-            </label>
-          </div>
-          <span id="gendererror"></span>
+          <span class="text-red" id="gendererror"></span>
         </div>
-        <div class="container"> Languages Known
-          <div class="form-check">
+        <div class="container col my-4 text-white"> Languages Known
+          <div class="container d-flex">
+            <div class="form-check me-3">
             <input
               class="form-check-input"
               type="checkbox"
-              value=""
-              id="flexCheckDefault"
+              name="language"
+              value="English"
+              id="language"
             />
             <label class="form-check-label" for="flexCheckDefault">
               English
             </label>
           </div>
-          <div class="form-check">
+          <div class="form-check me-3">
             <input
               class="form-check-input"
+              name="language"
               type="checkbox"
-              value=""
-              id="flexCheckChecked"
+              value="Hindi"
+              id="language"
             />
             <label class="form-check-label" for="flexCheckChecked">
               Hindi
             </label>
           </div>
-          <div class="form-check">
+          <div class="form-check me-3">
             <input
               class="form-check-input"
+              name="language"
               type="checkbox"
-              value=""
-              id="flexCheckChecked"
+              value="Telugu"
+              id="language"
             />
             <label class="form-check-label" for="flexCheckChecked">
               Telugu
             </label>
           </div>
-          <div class="form-check">
+          <div class="form-check me-3">
             <input
               class="form-check-input"
+              name="language"
               type="checkbox"
-              value=""
-              id="flexCheckChecked"
+              value="Kannada"
+              id="language"
+            />
+            <label class="form-check-label" for="flexCheckChecked">
+              Kannada
+            </label>
+          </div>
+          <div class="form-check me-3">
+            <input
+              class="form-check-input"
+              name="language"
+              type="checkbox"
+              value="Tamil"
+              id="language"
             />
             <label class="form-check-label" for="flexCheckChecked">
               Tamil
             </label>
           </div>
-          <span id="languageserror"></span>
+          </div>
+          <span class="text-red" id="languageserror"></span>
         </div>
-        <div class="container">
-          <label id="form-label" for="address">City</label>
-          <input id="city" class="form-control" type="text" />
-          <span id="cityerror"></span>
+        <div class="container d-flex my-4">
+          <div class="container col form-floating">
+          <input id="city" class="form-control" type="text" placeholder="enter your city name" />
+          <label id="floating-input mx-2" for="city">City</label>
+          <span class="text-red" id="cityerror"></span>
         </div>
-        <div class="container">
-          <label class="form-label" for="password">Password</label>
+        <div class="container col form-floating">
+          <input id="state" class="form-control" type="text" placeholder="enter your state name" />
+          <label id="floating-input mx-2" for="state">State</label>
+          <span class="text-red" id="stateerror"></span>
+        </div>
+        </div>
+        <div class="container d-flex my-4">
+          <div class="container col form-floating">
           <input
             id="password"
             class="form-control"
@@ -161,12 +195,10 @@
             id=""
             placeholder="enter your password"
           />
+          <label class="floating-input mx-2" for="password">Password</label>
           <span class="" id="passworderror"></span>
         </div>
-        <div class="container">
-          <label class="form-label" for="confirmpassword"
-            >Confirm Password</label
-          >
+        <div class="container col form-floating">
           <input
             id="confirmpassword"
             class="form-control"
@@ -175,9 +207,13 @@
             id=""
             placeholder="enter your confirm password"
           />
+          <label class="floating-input mx-2" for="confirmpassword"
+            >Confirm Password</label
+          >
           <span id="confirmpassworderror"></span>
         </div>
-        <div class="container">
+        </div>
+        <div class="container col my-5 justi">
           <input class="btn btn-primary" type="submit" value="Submit" />
         </div>
       </form>
@@ -187,13 +223,14 @@
         <thead>
           <tr>
             <th>S.No</th>
-            <th>Name</th>
+            <th>FirstName</th>
             <th>Email</th>
             <th>Phonenumber</th>
             <th>Date-Of-Birth</th>
             <th>Gender</th>
-            <th>Languages</th>
+            <th>Langauges</th>
             <th>City</th>
+            <th>State</th>
             <th>Password</th>
             <th>Confirm Password</th>
             <th>Actions</th>
