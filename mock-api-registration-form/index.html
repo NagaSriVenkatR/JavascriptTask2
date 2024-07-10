@@ -19,59 +19,100 @@
   </head>
   <body>
     <div class="parent container d-flex my-5 p-5">
-      <form class="align-items-end " action="" id="myform" onsubmit="myfunction(event)">
+      <form class="" action="" id="myform" onsubmit="myfunction(event)">
         <h1 class="mx-4 text-white">Registration Form</h1>
         <div class="container d-flex my-4">
           <div class="container col form-floating">
           <input
-            class="form-control"
-            id="name"
+            class="input form-control"
+            id="fullname"
             type="text"
             placeholder="enter your full name"
           />
-          <label class="floating-input mx-2" for="name">Name</label>
-          <span class="text-red" id="nameerror"></span>
+          <label class="floating-input" for="name">Name</label>
+          <span class="text-red fs-4" id="nameerror"></span>
           </div>
           <div class="container col form-floating">
             <input
-              class="form-control"
+              class="input form-control"
               id="email"
               type="email"
               placeholder="enter your email"
             />
-            <label class="floating-input mx-2" for="email">Email</label>
-            <span class="text-red" id="emailerror"></span>
+            <label class="floating-input" for="email">Email</label>
+            <span class="text-red fs-4" id="emailerror"></span>
           </div> 
         </div>
-        <div class="container d-flex justify-content-spacebetween my-4">
+        <div class="container d-flex my-4">
           <div class="container col form-floating">
           <input
-            class="form-control"
+            class="input form-control"
             type="tel"
             name=""
             id="phonenumber"
             placeholder="enter your phone number"
           />
-          <label class="floating-input mx-2" for="mobilenumber">Phonenumber</label>
-          <span class="text-red" id="phonenumbererror"></span>
+          <label class="floating-input" for="mobilenumber">Phonenumber</label>
+          <span class="text-red fs-4" id="phonenumbererror"></span>
         </div>
         <div class="container col form-floating">
           <input
             id="dateofbirth"
-            class="form-control"
+            class="input form-control"
             type="date"
             placeholder="enter your date of birth"
           />
-          <label class="floating-input mx-2" for="dateofbirth">Date Of Birth</label>
-          <span class="text-red" id="dateofbirtherror"></span>
+          <label class="floating-input" for="dateofbirth">Date Of Birth</label>
+          <span class="text-red fs-4" id="dateofbirtherror"></span>
         </div>
         </div>
-        <div class="container col my-4 text-white" id="gender" name="gender">
-          Gender
-          <div class="container d-flex">
-            <div class="form-check me-3">
+        <div class="container d-flex my-4">
+          <div class="container col form-floating">
+          <input id="city" class="input form-control" type="text" placeholder="enter your city name" />
+          <label id="floating-input" for="city">City</label>
+          <span class="text-red fs-4" id="cityerror"></span>
+        </div>
+        <div class="container col form-floating">
+          <input id="state" class="input form-control" type="text" placeholder="enter your state name" />
+          <label id="floating-input" for="state">State</label>
+          <span class="text-red fs-4" id="stateerror"></span>
+        </div>
+        </div>
+        <div class="container d-flex my-4">
+          <div class="container col form-floating">
+          <input
+            id="password"
+            class="input form-control"
+            type="password"
+            name=""
+            id=""
+            placeholder="enter your password"
+          />
+          <label class="floating-input" for="password">Password</label>
+          <span class=" fs-4" id="passworderror"></span>
+        </div>
+        <div class="container col form-floating">
+          <input
+            id="confirmpassword"
+            class="input form-control"
+            type="password"
+            name=""
+            id=""
+            placeholder="enter your confirm password"
+          />
+          <label class="floating-input" for="confirmpassword"
+            >Confirm Password</label
+          >
+          <span class="fs-4" id="confirmpassworderror"></span>
+        </div>
+        </div>
+        <div class="container d-flex my-4">
+          <div class="container col mx-2 text-white" id="gender" name="gender">
+          <label class="form-label" for="gender">Gender</label>
+          <div class="container">
+            <div class="form-check">
               <input
-                class="form-check-input"
+                class="form-check-input ms-4"
                 type="radio"
                 name="gender"
                 id="gendermale"
@@ -81,9 +122,9 @@
                 Male
               </label>
             </div>
-            <div class="form-check me-3">
+            <div class="form-check">
               <input
-                class="form-check-input"
+                class="form-check-input ms-4"
                 type="radio"
                 name="gender"
                 id="genderfemale"
@@ -93,9 +134,9 @@
                 Female
               </label>
             </div>
-            <div class="form-check me-3">
+            <div class="form-check">
               <input
-                class="form-check-input"
+                class="form-check-input ms-4"
                 type="radio"
                 name="gender"
                 id="genderothers"
@@ -106,13 +147,14 @@
               </label>
             </div>
           </div>
-          <span class="text-red" id="gendererror"></span>
+          <span class="text-red fs-4" id="gendererror"></span>
         </div>
-        <div class="container col my-4 text-white"> Languages Known
-          <div class="container d-flex">
-            <div class="form-check me-3">
+          <div class="container col mx-2 text-white">
+            <label class="form-label" for="language">Languages Known</label>
+          <div class="container">
+            <div class="form-check">
             <input
-              class="form-check-input"
+              class="form-check-input ms-4"
               type="checkbox"
               name="language"
               value="English"
@@ -122,9 +164,9 @@
               English
             </label>
           </div>
-          <div class="form-check me-3">
+          <div class="form-check">
             <input
-              class="form-check-input"
+              class="form-check-input ms-4"
               name="language"
               type="checkbox"
               value="Hindi"
@@ -134,9 +176,9 @@
               Hindi
             </label>
           </div>
-          <div class="form-check me-3">
+          <div class="form-check">
             <input
-              class="form-check-input"
+              class="form-check-input ms-4"
               name="language"
               type="checkbox"
               value="Telugu"
@@ -146,21 +188,9 @@
               Telugu
             </label>
           </div>
-          <div class="form-check me-3">
+          <div class="form-check">
             <input
-              class="form-check-input"
-              name="language"
-              type="checkbox"
-              value="Kannada"
-              id="language"
-            />
-            <label class="form-check-label" for="flexCheckChecked">
-              Kannada
-            </label>
-          </div>
-          <div class="form-check me-3">
-            <input
-              class="form-check-input"
+              class="form-check-input ms-4"
               name="language"
               type="checkbox"
               value="Tamil"
@@ -171,73 +201,15 @@
             </label>
           </div>
           </div>
-          <span class="text-red" id="languageserror"></span>
-        </div>
-        <div class="container d-flex my-4">
-          <div class="container col form-floating">
-          <input id="city" class="form-control" type="text" placeholder="enter your city name" />
-          <label id="floating-input mx-2" for="city">City</label>
-          <span class="text-red" id="cityerror"></span>
-        </div>
-        <div class="container col form-floating">
-          <input id="state" class="form-control" type="text" placeholder="enter your state name" />
-          <label id="floating-input mx-2" for="state">State</label>
-          <span class="text-red" id="stateerror"></span>
+          <span class="text-red fs-4" id="languageerror"></span>
         </div>
         </div>
-        <div class="container d-flex my-4">
-          <div class="container col form-floating">
-          <input
-            id="password"
-            class="form-control"
-            type="password"
-            name=""
-            id=""
-            placeholder="enter your password"
-          />
-          <label class="floating-input mx-2" for="password">Password</label>
-          <span class="" id="passworderror"></span>
-        </div>
-        <div class="container col form-floating">
-          <input
-            id="confirmpassword"
-            class="form-control"
-            type="password"
-            name=""
-            id=""
-            placeholder="enter your confirm password"
-          />
-          <label class="floating-input mx-2" for="confirmpassword"
-            >Confirm Password</label
-          >
-          <span id="confirmpassworderror"></span>
-        </div>
-        </div>
-        <div class="container col my-5 justi">
-          <input class="btn btn-primary" type="submit" value="Submit" />
+        <div class="container col my-3 ">
+          <div class="container text-center">
+            <input class="btn btn-danger input px-5 py-3" type="submit" value="Register" />
+          </div>
         </div>
       </form>
-    </div>
-    <div class="container">
-      <table class="table table-bordered" id="dataTable">
-        <thead>
-          <tr>
-            <th>S.No</th>
-            <th>FirstName</th>
-            <th>Email</th>
-            <th>Phonenumber</th>
-            <th>Date-Of-Birth</th>
-            <th>Gender</th>
-            <th>Langauges</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Password</th>
-            <th>Confirm Password</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
     </div>
     <script src="main.js"></script>
   </body>
