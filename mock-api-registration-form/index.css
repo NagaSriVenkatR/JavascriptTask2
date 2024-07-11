@@ -13,6 +13,10 @@
 label{
   margin-left: 50px !important;
 }
+.form-check-label{
+  margin-left: 10px !important ;
+}
+
 span{
   color: red;
   margin-left: 20px;
