@@ -18,198 +18,212 @@
     ></script>
   </head>
   <body>
-    <div class="parent container d-flex my-5 p-5">
-      <form class="" action="" id="myform" onsubmit="myfunction(event)">
-        <h1 class="mx-4 text-white">Registration Form</h1>
-        <div class="container d-flex my-4">
-          <div class="container col form-floating">
-          <input
-            class="input form-control"
-            id="fullname"
-            type="text"
-            placeholder="enter your full name"
-          />
-          <label class="floating-input" for="name">Name</label>
-          <span class="text-red fs-4" id="nameerror"></span>
+    <div class="container d-flex justify-content-center align-items-center">
+      <div class="parent row align-items-center my-5">
+      <div class="left col-md-6">
+        <img class="img-fluid" src="pic.jpg" alt="">
+      </div>
+      <div class="right col-md-6">
+        <form
+        class=""
+        action=""
+        id="myform"
+        onsubmit="myfunction(event)"
+      >
+        <label class="heading text-white bg-primary">
+          Registration Form
+        </label>
+        <div class="row pe-3 content">
+          <div class="col">
+            <label class="form-label fw-bold" for="name">Name</label>
+            <input class="input form-control" id="fullname" type="text" />
+            <span class="text-red" id="nameerror"></span>
           </div>
-          <div class="container col form-floating">
+          <div class="container col">
+            <label class="form-label fw-bold" for="email">Email</label>
+            <input class="input form-control" id="email" type="email" />
+            <span class="text-red" id="emailerror"></span>
+          </div>
+        </div>
+        <div class="row pe-3 content">
+          <div class="col">
+            <label class="form-label fw-bold" for="mobilenumber"
+              >Phonenumber</label
+            >
             <input
               class="input form-control"
-              id="email"
-              type="email"
-              placeholder="enter your email"
+              type="tel"
+              name=""
+              id="phonenumber"
             />
-            <label class="floating-input" for="email">Email</label>
-            <span class="text-red fs-4" id="emailerror"></span>
-          </div> 
+            <span class="text-red" id="phonenumbererror"></span>
+          </div>
+          <div class="col">
+            <label class="form-label fw-bold" for="dateofbirth"
+              >Date Of Birth</label
+            >
+            <input id="dateofbirth" class="input form-control" type="date" />
+
+            <span class="text-red" id="dateofbirtherror"></span>
+          </div>
         </div>
-        <div class="container d-flex my-4">
-          <div class="container col form-floating">
-          <input
-            class="input form-control"
-            type="tel"
-            name=""
-            id="phonenumber"
-            placeholder="enter your phone number"
-          />
-          <label class="floating-input" for="mobilenumber">Phonenumber</label>
-          <span class="text-red fs-4" id="phonenumbererror"></span>
+        <div class="row pe-3 content">
+          <div class="col">
+            <label class="form-label" for="city">City</label>
+            <input id="city" class="input form-control" type="text" />
+
+            <span class="text-red" id="cityerror"></span>
+          </div>
+          <div class="col">
+            <label class="form-label" for="state">State</label>
+            <input id="state" class="input form-control" type="text"" />
+
+            <span class="text-red" id="stateerror"></span>
+          </div>
         </div>
-        <div class="container col form-floating">
-          <input
-            id="dateofbirth"
-            class="input form-control"
-            type="date"
-            placeholder="enter your date of birth"
-          />
-          <label class="floating-input" for="dateofbirth">Date Of Birth</label>
-          <span class="text-red fs-4" id="dateofbirtherror"></span>
+        <div class="row pe-3 content">
+          <div class="col">
+            <label class="form-label label" for="password">Password</label>
+            <input
+              id="password"
+              class="input form-control"
+              type="password"
+              name=""
+              id=""
+            />
+
+            <span class="" id="passworderror"></span>
+          </div>
+          <div class="col">
+            <label class="form-label fw-bold" for="confirmpassword"
+              >Confirm Password</label
+            >
+            <input
+              id="confirmpassword"
+              class="input form-control"
+              type="password"
+              name=""
+              id=""
+            />
+            <span class="" id="confirmpassworderror"></span>
+          </div>
         </div>
-        </div>
-        <div class="container d-flex my-4">
-          <div class="container col form-floating">
-          <input id="city" class="input form-control" type="text" placeholder="enter your city name" />
-          <label id="floating-input" for="city">City</label>
-          <span class="text-red fs-4" id="cityerror"></span>
-        </div>
-        <div class="container col form-floating">
-          <input id="state" class="input form-control" type="text" placeholder="enter your state name" />
-          <label id="floating-input" for="state">State</label>
-          <span class="text-red fs-4" id="stateerror"></span>
-        </div>
-        </div>
-        <div class="container d-flex my-4">
-          <div class="container col form-floating">
-          <input
-            id="password"
-            class="input form-control"
-            type="password"
-            name=""
-            id=""
-            placeholder="enter your password"
-          />
-          <label class="floating-input" for="password">Password</label>
-          <span class=" fs-4" id="passworderror"></span>
-        </div>
-        <div class="container col form-floating">
-          <input
-            id="confirmpassword"
-            class="input form-control"
-            type="password"
-            name=""
-            id=""
-            placeholder="enter your confirm password"
-          />
-          <label class="floating-input" for="confirmpassword"
-            >Confirm Password</label
-          >
-          <span class="fs-4" id="confirmpassworderror"></span>
-        </div>
-        </div>
-        <div class="container d-flex my-4">
-          <div class="container col mx-2 text-white" id="gender" name="gender">
-          <label class="form-label" for="gender">Gender</label>
-          <div class="container">
-            <div class="form-check">
-              <input
-                class="form-check-input ms-4"
-                type="radio"
-                name="gender"
-                id="gendermale"
-                value="Male"
-              />
-              <label class="form-check-label" for="flexRadioDefault1">
-                Male
-              </label>
+        <div class="row pe-3 content">
+          <div class="col" id="gender" name="gender">
+            <label class="form-label fw-bold fw-bold" for="gender"
+              >Gender</label
+            >
+            <div class="container">
+              <div class="form-check">
+                <input
+                  class="form-check-input "
+                  type="radio"
+                  name="gender"
+                  id="gendermale"
+                  value="Male"
+                />
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Male
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input "
+                  type="radio"
+                  name="gender"
+                  id="genderfemale"
+                  value="Female"
+                />
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Female
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input "
+                  type="radio"
+                  name="gender"
+                  id="genderothers"
+                  value="Others"
+                />
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Others
+                </label>
+              </div>
             </div>
-            <div class="form-check">
-              <input
-                class="form-check-input ms-4"
-                type="radio"
-                name="gender"
-                id="genderfemale"
-                value="Female"
-              />
-              <label class="form-check-label" for="flexRadioDefault2">
-                Female
-              </label>
+            <span class="text-red" id="gendererror"></span>
+          </div>
+          <div class="col">
+            <label class="form-label fw-bold" for="language"
+              >Languages Known</label
+            >
+            <div class="container">
+              <div class="form-check">
+                <input
+                  class="form-check-input "
+                  type="checkbox"
+                  name="language"
+                  value="English"
+                  id="language"
+                />
+                <label class="form-check-label" for="flexCheckDefault">
+                  English
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input "
+                  name="language"
+                  type="checkbox"
+                  value="Hindi"
+                  id="language"
+                />
+                <label class="form-check-label" for="flexCheckChecked">
+                  Hindi
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input "
+                  name="language"
+                  type="checkbox"
+                  value="Telugu"
+                  id="language"
+                />
+                <label class="form-check-label" for="flexCheckChecked">
+                  Telugu
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input "
+                  name="language"
+                  type="checkbox"
+                  value="Tamil"
+                  id="language"
+                />
+                <label class="form-check-label" for="flexCheckChecked">
+                  Tamil
+                </label>
+              </div>
             </div>
-            <div class="form-check">
-              <input
-                class="form-check-input ms-4"
-                type="radio"
-                name="gender"
-                id="genderothers"
-                value="Others"
-              />
-              <label class="form-check-label" for="flexRadioDefault2">
-                Others
-              </label>
-            </div>
+            <span class="text-red" id="languageerror"></span>
           </div>
-          <span class="text-red fs-4" id="gendererror"></span>
         </div>
-          <div class="container col mx-2 text-white">
-            <label class="form-label" for="language">Languages Known</label>
-          <div class="container">
-            <div class="form-check">
-            <input
-              class="form-check-input ms-4"
-              type="checkbox"
-              name="language"
-              value="English"
-              id="language"
-            />
-            <label class="form-check-label" for="flexCheckDefault">
-              English
-            </label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input ms-4"
-              name="language"
-              type="checkbox"
-              value="Hindi"
-              id="language"
-            />
-            <label class="form-check-label" for="flexCheckChecked">
-              Hindi
-            </label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input ms-4"
-              name="language"
-              type="checkbox"
-              value="Telugu"
-              id="language"
-            />
-            <label class="form-check-label" for="flexCheckChecked">
-              Telugu
-            </label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input ms-4"
-              name="language"
-              type="checkbox"
-              value="Tamil"
-              id="language"
-            />
-            <label class="form-check-label" for="flexCheckChecked">
-              Tamil
-            </label>
-          </div>
-          </div>
-          <span class="text-red fs-4" id="languageerror"></span>
-        </div>
-        </div>
-        <div class="container col my-3 ">
+        <div class="container col ">
           <div class="container text-center">
-            <input class="btn btn-danger input px-5 py-3" id="submitBtn" type="submit" value="Register" />
+            <input
+              class="btn btn-primary"
+              id="submitBtn"
+              type="submit"
+              value="Register"
+            />
           </div>
         </div>
       </form>
+      </div>
+      
+    </div>
     </div>
     <script src="main.js"></script>
   </body>

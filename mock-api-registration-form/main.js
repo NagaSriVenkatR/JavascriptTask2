@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const urlParams = new URLSearchParams(window.location.search);
   let editUserId = urlParams.get("edit");
-  
-  if (editUserId) { 
+
+  if (editUserId) {
     fetch(
       `https://6683c44d56e7503d1ade07d4.mockapi.io/userData/registerdata/${editUserId}`
     )
@@ -163,38 +163,14 @@ function myfunction(event) {
       gender: usergender,
       language: userlanguages,
     };
+    const editRegisterId = document.getElementById("submitBtn").dataset.editId;
 
-    // const editUserId = document.getElementById("submitBtn").dataset.editId;
-
-    // if (editUserId) {
-    //   // Update existing entry
-    //   fetch(
-    //     `https://6683c44d56e7503d1ade07d4.mockapi.io/userData/registerdata`,
-    //     {
-    //       method: "PUT",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify(obj),
-    //     }
-    //   )
-    //     .then((res) => {
-    //       if (res.ok) {
-    //         console.log("User updated successfully.");
-    //         window.location.href = "table.html"; // Redirect to table page after successful update
-    //       } else {
-    //         console.error("Failed to update user:", res.status);
-    //       }
-    //     })
-    //     .catch((error) => {
-    //       console.error("Error updating user:", error);
-    //     });
-    // } else {
-    //   // Create new entry
+    if (editRegisterId) {
+      // Update existing entry
       fetch(
-        `https://6683c44d56e7503d1ade07d4.mockapi.io/userData/registerdata`,
+        `https://6683c44d56e7503d1ade07d4.mockapi.io/userData/registerdata/${editRegisterId}`,
         {
-          method: "POST",
+          method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
@@ -203,16 +179,33 @@ function myfunction(event) {
       )
         .then((res) => {
           if (res.ok) {
-            console.log("User created successfully.");
-            window.location.href = "table.html"; // Redirect to table page after successful creation
+            console.log("User updated successfully.");
+            window.location.href = "table.html"; // Redirect to table page after successful update
           } else {
-            console.error("Failed to create user:", res.status);
+            console.error("Failed to update user:", res.status);
           }
         })
         .catch((error) => {
-          console.error("Error creating user:", error);
+          console.error("Error updating user:", error);
         });
-    
+    }
+    fetch(`https://6683c44d56e7503d1ade07d4.mockapi.io/userData/registerdata`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(obj),
+    })
+      .then((res) => {
+        if (res.ok) {
+          console.log("User created successfully.");
+          window.location.href = "table.html";
+          console.error("Failed to create user:", res.status);
+        }
+      })
+      .catch((error) => {
+        console.error("Error creating user:", error);
+      });
   }
   document.getElementById("myform").reset();
 }

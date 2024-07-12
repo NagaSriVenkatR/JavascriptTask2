@@ -1,20 +1,77 @@
+.right{
+  margin: 0 !important;
+  padding: 0 !important;
+}
 .parent{
-  background-image: url(form-v9.jpg);
+  box-shadow: 10px 10px 10px 20px gray;
+}
+.row {
+  margin: 0px !important;
+}
+.content{
+  height: 75px !important;
+}
+.left{
+  background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 20px;
-  justify-content:center;
-  align-items: center;
+  background-clip: inherit;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.col-md-6{
+  height: 600px !important;
+  width: 500px !important;
+}
+
+.form-control{
+  height: 30px !important;
+  font-size: 15px !important;
+}
+.form-check-input{
+  height: 30px !important;
+}
+.form-check-label{
+  height: 30px !important;
+}
+.form-label{
+  height: 30px !important;
+}
+img{
+  height: 600px !important;
+}
+
+.heading{
+  margin-top: 30px !important;
+  border-radius: 15px;
+  margin-left: 30% !important;
+  padding: 10px;
+}
+
+.btn{
+  margin-top: 100px !important;
+  border-radius: 15px !important;
+}
+.form-label{
+  font-weight: bold !important;
+  margin: 0px !important;
+}
+.label{
+  font-weight: bold !important;
 }
 .input{
-  border-radius: 50px !important;
-  padding-left: 30px !important;
+  background-color: lightgray !important;
+  border-radius: 5px !important;
+  
+  margin: 0px !important;
 }
-label{
-  margin-left: 50px !important;
+.form-check-input{
+  background-color: lightgray !important;
+  margin: 0px !important;
 }
 .form-check-label{
   margin-left: 10px !important ;
+  /* margin: 0px !important; */
 }
 
 span{
