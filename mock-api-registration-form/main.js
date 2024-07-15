@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (data.gender) {
           document.querySelector(
-            `input[name="gender"][value="${data.gender}"]`
+            `option[name="gender"][value="${data.gender}"]`
           ).checked = true;
         }
 
@@ -61,7 +61,7 @@ function myfunction(event) {
   let passerr = document.getElementById("passworderror");
   let confirmpasserr = document.getElementById("confirmpassworderror");
   let usergenderElement = document.querySelector(
-    'input[name="gender"]:checked'
+    'option[name="gender"]:checked'
   );
   let usergender = usergenderElement ? usergenderElement.value : "";
   let userlanguagesElements = document.querySelectorAll(
@@ -166,7 +166,6 @@ function myfunction(event) {
     const editRegisterId = document.getElementById("submitBtn").dataset.editId;
 
     if (editRegisterId) {
-      // Update existing entry
       fetch(
         `https://6683c44d56e7503d1ade07d4.mockapi.io/userData/registerdata/${editRegisterId}`,
         {
@@ -188,24 +187,29 @@ function myfunction(event) {
         .catch((error) => {
           console.error("Error updating user:", error);
         });
+    }else{
+       fetch(
+         `https://6683c44d56e7503d1ade07d4.mockapi.io/userData/registerdata`,
+         {
+           method: "POST",
+           headers: {
+             "Content-Type": "application/json",
+           },
+           body: JSON.stringify(obj),
+         }
+       )
+         .then((res) => {
+           if (res.ok) {
+             console.log("User created successfully.");
+             window.location.href = "table.html";
+             console.error("Failed to create user:", res.status);
+           }
+         })
+         .catch((error) => {
+           console.error("Error creating user:", error);
+         });
     }
-    fetch(`https://6683c44d56e7503d1ade07d4.mockapi.io/userData/registerdata`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(obj),
-    })
-      .then((res) => {
-        if (res.ok) {
-          console.log("User created successfully.");
-          window.location.href = "table.html";
-          console.error("Failed to create user:", res.status);
-        }
-      })
-      .catch((error) => {
-        console.error("Error creating user:", error);
-      });
+   
   }
   document.getElementById("myform").reset();
 }
