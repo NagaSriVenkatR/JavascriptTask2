@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -19,161 +19,163 @@
   </head>
   <body>
     <div class="container parent">
-      <div class="row">
-      <div class="left col-md-3">
-        <h3>Welcome</h3>
-        <p>You are 30 seconds away from earning your own money!</p>
-      </div>
-      <div class="right col-md-9">
-        <h3 class="register-heading">Apply as a Employee</h3>
-        <form class="row register-form"
-        action=""
-        id="myform"
-        onsubmit="myfunction(event)">
-          <div class="col-md-6">
-              <div class="form-group form-floating form-floating">
-                <input class="input form-control" id="fullname" type="text" placeholder="Full Name" />
-                <label for="floating-label">Name</label>
-                <span class="" id="nameerror"></span>
-              </div>
-              <div class="form-group form-floating ">
-                <input
-                  class="input form-control"
-                  type="tel"
-                  name=""
-                  placeholder="Phone Number"
-                  id="phonenumber"
-                />
-                <label for="floating-label">Phonenumber</label>
-                <span class="text-red" id="phonenumbererror"></span>
+      <div class="row row-sm">
+        <div class="left col-md-3">
+          <h3>Welcome</h3>
+          <p>You are 30 seconds away from earning your own money!</p>
+        </div>
+        <div class="right col-md-9">
+          <h3 class="register-heading">Apply as a Employee</h3>
+          <form class="row register-form"
+          action=""
+          id="myform"
+          onsubmit="myfunction(event)">
+            <div class="col-md-6">
+                <div class="form-group form-floating">
+                  <input class="form-control form-control-sm" id="fullname" type="text" placeholder="Full Name" />
+                   <label class="label" for="floatingInput">Name</label> 
+                  <span class="" id="nameerror"></span>
+                </div>
+                <div class="form-group form-floating">
+                    <input
+                      class="input form-control"
+                      type="tel"
+                      name=""
+                      placeholder="Phone Number"
+                      id="phonenumber"
+                    />
+                    <label class="label" for="floatingInput">Phonenumber</label> 
+                    <span class="text-red" id="phonenumbererror"></span>
+                </div>
+                <div class="form-group form-floating">
+                  <input id="city" class="input form-control" type="text" placeholder="City" />
+                  <label class="label" for="floatingInput">City</label> 
+                  <span class="text-red" id="cityerror"></span>
+                  
+                </div>
+                <div class="form-group form-floating">
+    
+                  <input
+                    id="password"
+                    class="input form-control"
+                    type="password"
+                    placeholder="Password"
+                    name=""
+                    id=""
+                  />
+                  <label class="label" for="floatingInput">Password</label>
+                  <span class="" id="passworderror"></span>
+                  
+                </div> 
+                  <div class="form-group form-floating">
+                  <select class="form-select" name="gender" id="gender">
+                    <option value="">Please select your gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Others">Others</option>
+                  </select>
+                  <label class="label" for="floatingInput">Gender</label> 
+                  <span class="text-red" id="gendererror"></span>
+                  </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+            <div class="form-group form-floating">
+                <input class="input form-control" placeholder="Email" id="email" type="email" />
+                <label class="label" for="floatingInput">Email</label> 
+                <span class="text-red" id="emailerror"></span>
+            </div>
+            <div class="form-group form-floating">
+                <input id="dateofbirth" class="input form-control" type="date" />
+                <label class="label" for="floatingInput">Date Of Birth</label>
+                <span class="text-red" id="dateofbirtherror"></span>
               </div>
               <div class="form-group form-floating">
-                <input id="city" class="input form-control" type="text" placeholder="City" />
-                <label for="floating-label">City</label>
-                <span class="text-red" id="cityerror"></span>
+                <input id="state" class="input form-control" type="text" placeholder="State" />
+                <label class="label" for="floatingInput">State</label>
+                <span class="text-red" id="stateerror"></span>
               </div>
               <div class="form-group form-floating">
                 <input
-                  id="password"
+                  id="confirmpassword"
                   class="input form-control"
                   type="password"
-                  placeholder="Password"
+                  placeholder="Confirm Password"
                   name=""
                   id=""
                 />
-                <label for="floating-label">Password</label>
-                <span class="" id="passworderror"></span>
+                <label class="label" for="floatingInput">ConfirmPassword</label>
+                <span class="" id="confirmpassworderror"></span>
               </div>
-              <div class="form-group form-floating" id="gender" name="gender">
-                <select class="form-select" name="gender" id="gender">
-                  <option value="">Please select your gender</option>
-                  <option name="gender" value="Male">Male</option>
-                  <option name="gender" value="Female">Female</option>
-                  <option name="gender" value="Others">Others</option>
-                </select>
-                <label for="floating-label">Gender</label>
-                <span class="text-red" id="gendererror"></span>
+              <div class="form-group row">
+                <label for="">Language</label>
+                <div class="col">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input "
+                      type="checkbox"
+                      name="language"
+                      value="English"
+                      id="language"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      English
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input "
+                      name="language"
+                      type="checkbox"
+                      value="Hindi"
+                      id="language"
+                    />
+                    <label class="form-check-label" for="flexCheckChecked">
+                      Hindi
+                    </label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input "
+                      name="language"
+                      type="checkbox"
+                      value="Telugu"
+                      id="language"
+                    />
+                    <label class="form-check-label" for="flexCheckChecked">
+                      Telugu
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input "
+                      name="language"
+                      type="checkbox"
+                      value="Tamil"
+                      id="language"
+                    />
+                    <label class="form-check-label" for="flexCheckChecked">
+                      Tamil
+                    </label>
+                  </div>
+                </div> 
+                <span class="text-red" id="languageerror"></span>
               </div>
-          </div>
-          <div class="col-md-6">
-          <div class="form-group form-floating">
-              <input class="input form-control" placeholder="Email" id="email" type="email" />
-              <label for="floating-label">Email</label>
-              <span class="text-red" id="emailerror"></span>
-          </div>
-          <div class="form-group form-floating">
-              <input id="dateofbirth" class="input form-control" type="date" />
-              <label for="floating-label">Date Of Birth</label>
-              <span class="text-red" id="dateofbirtherror"></span>
-            </div>
-            <div class="form-group form-floating">
-              <input id="state" class="input form-control" type="text" placeholder="State" />
-              <label for="floating-label">State</label>
-              <span class="text-red" id="stateerror"></span>
-            </div>
-            <div class="form-group form-floating">
-              <input
-                id="confirmpassword"
-                class="input form-control"
-                type="password"
-                placeholder="Confirm Password"
-                name=""
-                id=""
-              />
-              <label for="floating-label">ConfirmPassword</label>
-              <span class="" id="confirmpassworderror"></span>
-            </div>
-            <div class="form-group form-floating row">
-              <div class="col">
-                <label for="floating-label">Language</label>
-                <div class="form-check">
-                  <input
-                    class="form-check-input "
-                    type="checkbox"
-                    name="language"
-                    value="English"
-                    id="language"
-                  />
-                  <label class="form-check-label" for="flexCheckDefault">
-                    English
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input "
-                    name="language"
-                    type="checkbox"
-                    value="Hindi"
-                    id="language"
-                  />
-                  <label class="form-check-label" for="flexCheckChecked">
-                    Hindi
-                  </label>
-                </div>
+              
+              <div class="form-group form-floating">
+                <input
+                  class="btn btn-primary btnRegister px-4"
+                  id="submitBtn"
+                  type="submit"
+                  value="Register"
+                />
               </div>
-              <div class="col">
-                <div class="form-check">
-                  <input
-                    class="form-check-input "
-                    name="language"
-                    type="checkbox"
-                    value="Telugu"
-                    id="language"
-                  />
-                  <label class="form-check-label" for="flexCheckChecked">
-                    Telugu
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input "
-                    name="language"
-                    type="checkbox"
-                    value="Tamil"
-                    id="language"
-                  />
-                  <label class="form-check-label" for="flexCheckChecked">
-                    Tamil
-                  </label>
-                </div>
-              </div> 
-              <span class="text-red" id="languageerror"></span>
             </div>
-            
-            <div class="form-group form-floating">
-              <input
-                class="btn btn-primary btnRegister px-4"
-                id="submitBtn"
-                type="submit"
-                value="Register"
-              />
-            </div>
-          </div>
-          </div> 
-        </form>
+          </form>
+        </div>
       </div>
-    </div>
     </div>
     <script src="main.js"></script>
   </body>
-</html>
+</html> 

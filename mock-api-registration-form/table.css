@@ -1,0 +1,6 @@
+.button{
+  display: flex;
+}
+.btn-primary{
+  margin-left: 65px !important;
+}

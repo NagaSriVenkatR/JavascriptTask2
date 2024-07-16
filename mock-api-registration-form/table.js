@@ -26,8 +26,10 @@ function tableAdd() {
         table += "<td>" + data[i].confirmpassword + "</td>";
         table += "<td>" + data[i].gender + "</td>";
         table += "<td>" + data[i].language + "</td>";
-        table += `<td> <button style="padding:5px 15px;background-color:purple;color:white;font-size:20px;margin-bottom:10px ;border-radius:5px" onclick = 'editData(${data[i].id})'>Edit</button> <button style="padding:5px 15px;background-color:Red;color:white;font-size:20px;border-radius:5px" onclick = 'deleteData( 
-         ${data[i].id})'>Delete</button></td>`;
+        table += `<td class="d-flex"> 
+        <button class="btn btn-success me-3"  onclick = 'editData(${data[i].id})'>Edit</button>
+         <button class="btn btn-danger"  onclick = 'deleteData( ${data[i].id})'>Delete</button></td>`;
+        table += "<tr>";
       }
       document.getElementById("tbody").innerHTML = table;
     });

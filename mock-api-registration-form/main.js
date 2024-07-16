@@ -19,9 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
           data.confirmpassword || "";
 
         if (data.gender) {
-          document.querySelector(
-            `option[name="gender"][value="${data.gender}"]`
-          ).checked = true;
+          document.getElementById("gender").value = data.gender;
         }
 
         if (data.language) {
@@ -60,10 +58,7 @@ function myfunction(event) {
   let stateerr = document.getElementById("stateerror");
   let passerr = document.getElementById("passworderror");
   let confirmpasserr = document.getElementById("confirmpassworderror");
-  let usergenderElement = document.querySelector(
-    'option[name="gender"]:checked'
-  );
-  let usergender = usergenderElement ? usergenderElement.value : "";
+  let userGender = document.getElementById("gender").value;
   let userlanguagesElements = document.querySelectorAll(
     'input[type="checkbox"]:checked'
   );
@@ -105,7 +100,7 @@ function myfunction(event) {
     phonenumbererr.innerHTML = "Invalid phone number format";
     valid = false;
   }
-  if (!usergender) {
+  if (!userGender) {
     gendererr.innerHTML = "Gender is required";
     valid = false;
   }
@@ -160,7 +155,7 @@ function myfunction(event) {
       state: userState,
       password: userPassword,
       confirmpassword: userConfirmpassword,
-      gender: usergender,
+      gender: userGender,
       language: userlanguages,
     };
     const editRegisterId = document.getElementById("submitBtn").dataset.editId;
