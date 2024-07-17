@@ -14,19 +14,19 @@ function tableAdd() {
       for (let i = 0; i < data.length; i++) {
         let sno = i + 1;
         data;
-        table += "<tr>";
-        table += "<td>" + sno + "</td>";
-        table += "<td>" + data[i].name + "</td>";
-        table += "<td>" + data[i].email + "</td>";
-        table += "<td>" + data[i].phonenumber + "</td>";
-        table += "<td>" + data[i].dob + "</td>";
-        table += "<td>" + data[i].city + "</td>";
-        table += "<td>" + data[i].state + "</td>";
-        table += "<td>" + data[i].password + "</td>";
-        table += "<td>" + data[i].confirmpassword + "</td>";
-        table += "<td>" + data[i].gender + "</td>";
-        table += "<td>" + data[i].language + "</td>";
-        table += `<td class="d-flex"> 
+        table += "<tr class='data'>";
+        table += "<td class=''>" + sno + "</td>";
+        table += "<td class=''>" + data[i].name + "</td>";
+        table += "<td class=''>" + data[i].email + "</td>";
+        table += "<td class=''>" + data[i].phonenumber + "</td>";
+        table += "<td class=''>" + data[i].dob + "</td>";
+        table += "<td class=''>" + data[i].city + "</td>";
+        table += "<td class=''>" + data[i].state + "</td>";
+        table += "<td class=''>" + data[i].password + "</td>";
+        table += "<td class=''>" + data[i].confirmpassword + "</td>";
+        table += "<td class=''>" + data[i].gender + "</td>";
+        table += "<td class=''>" + data[i].language + "</td>";
+        table += `<td class="cont"> 
         <button class="btn btn-success me-3"  onclick = 'editData(${data[i].id})'>Edit</button>
          <button class="btn btn-danger"  onclick = 'deleteData( ${data[i].id})'>Delete</button></td>`;
         table += "<tr>";

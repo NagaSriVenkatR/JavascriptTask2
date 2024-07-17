@@ -1,6 +1,233 @@
-.button{
-  display: flex;
+ .btn-primary{
+  margin: 50px;
+  margin-left: 100px;
+  background-color: blueviolet;
 }
-.btn-primary{
-  margin-left: 65px !important;
+.btn-success{
+  background-color: green;
+  margin: 15px;
+  height: 40px;
+}
+.cont{
+    display: flex;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+
+button{
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px ;
+}
+
+.btn-danger{
+  margin-right: 15px;
+  margin-top: 15px;
+  height: 40px;
+  background-color: red;
+}
+div{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  overflow-x: auto;
+  
+}
+
+table{
+  border-bottom:2px solid;
+  border-collapse: collapse;
+  box-shadow: 10px 10px 15px slategray;
+}
+thead{
+  height: 50px;
+}
+th{
+  padding: 10px;
+  background-color: lightgray;
+  border-bottom: 1px double black;
+  border-collapse: collapse;
+}
+td{
+  text-align: center;
+  border-bottom: 1px solid;
+  border-collapse: collapse;
+  padding: 10px;
+}
+@media screen and (max-width:1024px) {
+  .btn-primary{
+  margin: 50px;
+  margin-left: 0px;
+  background-color: blueviolet;
+}
+.btn-success{
+  background-color: green;
+  margin: 15px;
+  height: 40px;
+}
+.cont{
+    display: flex;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+
+button{
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px ;
+}
+
+.btn-danger{
+  margin-right: 15px;
+  margin-top: 15px;
+  height: 40px;
+  background-color: red;
+}
+div{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  overflow-x: auto;
+  
+}
+
+table{
+  border-bottom:2px solid;
+  border-collapse: collapse;
+  box-shadow: 10px 10px 15px slategray;
+}
+thead{
+  height: 50px;
+}
+th{
+  padding: 10px;
+  background-color: lightgray;
+  border-bottom: 1px double black;
+  border-collapse: collapse;
+}
+td{
+  text-align: center;
+  border-bottom: 1px solid;
+  border-collapse: collapse;
+  padding: 10px;
+}
+}
+@media screen and (max-width:570px) {
+  .btn-primary{
+  margin-top: 50px;
+  background-color: blueviolet;
+}
+.btn-success{
+  background-color: green;
+  margin: 15px;
+   height: 40px;
+}
+button{
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px ;
+}
+button:hover{
+  opacity: 0.9;
+}
+.btn-danger{
+  margin-top: 15px;
+  margin-right: 15px;
+  background-color: red;
+  height: 40px;
+}
+div{
+  justify-content: center;
+  margin-top: 50px;
+  overflow-x: auto;
+}
+table{
+  border:1px solid;
+  border-collapse: collapse;
+  box-shadow: 10px 10px 5px slategray;
+}
+thead{
+  height: 50px;
+}
+
+th{
+  padding: 10px;
+  background-color: lightgray;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td{
+  border: 1px solid;
+  border-collapse: collapse;
+  padding: 10px;
+  }
+  .cont{
+    display: flex;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+}
+@media screen and (max-width:768px) {
+  .cont{
+    display: flex;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+  .btn-primary{
+  margin-left:50px;
+  background-color: blueviolet;
+}
+.btn-success{
+  background-color: green;
+  margin: 15px;
+  height: 40px;
+}
+
+button{
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px ;
+}
+
+.btn-danger{
+  margin-top: 15px;
+  margin-right: 15px;
+  background-color: red;
+  height: 40px;
+}
+div{
+  justify-content: center;
+  margin: 50px;
+  overflow-x: auto;
+}
+table{
+  border:1px solid;
+  border-collapse: collapse;
+}
+thead{
+  height: 50px;
+}
+th{
+  padding: 10px;
+  background-color: lightgray;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td{
+  border: 1px solid;
+  border-collapse: collapse;
+  padding: 10px;
+}
 }
